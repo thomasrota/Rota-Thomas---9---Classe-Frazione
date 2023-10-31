@@ -92,6 +92,7 @@
             this.buttonSottr.TabIndex = 5;
             this.buttonSottr.Text = "Sottrai";
             this.buttonSottr.UseVisualStyleBackColor = true;
+            this.buttonSottr.Click += new System.EventHandler(this.buttonSottr_Click);
             // 
             // buttonMul
             // 
@@ -101,6 +102,7 @@
             this.buttonMul.TabIndex = 6;
             this.buttonMul.Text = "Moltiplica";
             this.buttonMul.UseVisualStyleBackColor = true;
+            this.buttonMul.Click += new System.EventHandler(this.buttonMul_Click);
             // 
             // buttonDiv
             // 
@@ -110,6 +112,7 @@
             this.buttonDiv.TabIndex = 7;
             this.buttonDiv.Text = "Dividi";
             this.buttonDiv.UseVisualStyleBackColor = true;
+            this.buttonDiv.Click += new System.EventHandler(this.buttonDiv_Click);
             // 
             // label1
             // 

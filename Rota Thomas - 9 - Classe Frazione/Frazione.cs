@@ -40,5 +40,25 @@ namespace Rota_Thomas___9___Classe_Frazione
             numeratore = num;
             denominatore = den;
         }
+        public void Sottrai(int n, int d)
+        {
+            int den = denominatore * d;
+            int num = numeratore * (d) - n * (denominatore);
+            numeratore = num;
+            denominatore = den;
+        }
+        public void Moltiplicazione(int n, int d)
+        {
+            numeratore *= n;
+            denominatore *= d;
+        }
+        public void Divisione(int n, int d)
+        {
+            numeratore /= n;
+            denominatore /= d;
+        }
+        public void Semplifica()
+        {
+        }
     }
 }
