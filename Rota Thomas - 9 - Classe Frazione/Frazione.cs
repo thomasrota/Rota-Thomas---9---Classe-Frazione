@@ -7,8 +7,8 @@ using System.Xml.Schema;
 
 namespace Rota_Thomas___9___Classe_Frazione
 {
-    public class Frazione
-    {
+    public class Frazione : ICloneable
+	{
         private int _numeratore, _denominatore;
 
         public Frazione()
@@ -16,6 +16,13 @@ namespace Rota_Thomas___9___Classe_Frazione
             numeratore = 0;
             denominatore = 1;
         }
+
+        // costruttore di copia
+        public Frazione(Frazione f)
+        {
+            numeratore = f.numeratore;
+            denominatore = f.denominatore;
+		}
 
         public int numeratore { get { return _numeratore; } set { _numeratore = value; } }
         public int denominatore 
@@ -74,5 +81,9 @@ namespace Rota_Thomas___9___Classe_Frazione
 	        }
 	        return n1;
         }
+	    public object Clone()
+	    {
+		    return this.MemberwiseClone();
+	    }
 	}
 }

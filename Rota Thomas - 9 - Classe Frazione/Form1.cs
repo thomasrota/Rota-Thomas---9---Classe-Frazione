@@ -13,10 +13,12 @@ namespace Rota_Thomas___9___Classe_Frazione
     public partial class Form1 : Form
     {
         public Frazione f;
+        public Frazione f1;
         public Form1()
         {
             InitializeComponent();
             f = new Frazione();
+            f1 = new Frazione(f);
         }
 
         private void buttonSomma_Click(object sender, EventArgs e)
