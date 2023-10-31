@@ -29,7 +29,7 @@ namespace Rota_Thomas___9___Classe_Frazione
                 if (value == 0)
                     throw new ArgumentNullException(paramName: nameof(_denominatore), message: "Denominator cannot be null");
                 else
-                _denominatore = value; 
+					_denominatore = value; 
             } 
         }
 
@@ -59,6 +59,20 @@ namespace Rota_Thomas___9___Classe_Frazione
         }
         public void Semplifica()
         {
+            int mcd = MCD(numeratore, denominatore);
+			numeratore /= mcd;
+			denominatore /= mcd;
         }
-    }
+	    private int MCD(int n1, int n2)
+	    {
+	        int temp;
+	        while (n2 != 0)
+	        {
+		        temp = n1 % n2;
+		        n1 = n2;
+		        n2 = temp;
+	        }
+	        return n1;
+        }
+	}
 }

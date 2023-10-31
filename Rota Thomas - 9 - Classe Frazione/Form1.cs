@@ -50,5 +50,13 @@ namespace Rota_Thomas___9___Classe_Frazione
             f.Divisione(int.Parse(textBoxNum2.Text), (int.Parse(textBoxDen2.Text) == 0) ? throw new ArgumentNullException(paramName: nameof(textBoxDen2), message: "Denominator cannot be null") : int.Parse(textBoxDen2.Text));
             MessageBox.Show($"{f.numeratore}/{f.denominatore}");
         }
-    }
+
+		private void buttonSemplifica_Click(object sender, EventArgs e)
+		{
+			f.numeratore = int.Parse(textBoxNum.Text);
+			f.denominatore = int.Parse(textBoxDen.Text);
+			f.Semplifica();
+			MessageBox.Show($"{f.numeratore}/{f.denominatore}");
+		}
+	}
 }
