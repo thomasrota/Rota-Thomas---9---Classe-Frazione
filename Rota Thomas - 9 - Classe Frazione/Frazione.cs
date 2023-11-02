@@ -9,7 +9,7 @@ namespace Rota_Thomas___9___Classe_Frazione
 {
     public class Frazione : ICloneable
 	{
-        private int _numeratore, _denominatore;
+        protected int _numeratore, _denominatore;
 
         public Frazione()
         {
@@ -46,6 +46,7 @@ namespace Rota_Thomas___9___Classe_Frazione
             int num = numeratore * (d) + n * (denominatore);
             numeratore = num;
             denominatore = den;
+            Semplifica();
         }
         public void Sottrai(int n, int d)
         {
@@ -53,16 +54,19 @@ namespace Rota_Thomas___9___Classe_Frazione
             int num = numeratore * (d) - n * (denominatore);
             numeratore = num;
             denominatore = den;
+            Semplifica();
         }
         public void Moltiplicazione(int n, int d)
         {
             numeratore *= n;
             denominatore *= d;
+            Semplifica();
         }
         public void Divisione(int n, int d)
         {
             numeratore /= n;
             denominatore /= d;
+            Semplifica();
         }
         public void Semplifica()
         {
@@ -86,4 +90,18 @@ namespace Rota_Thomas___9___Classe_Frazione
 		    return this.MemberwiseClone();
 	    }
 	}
+    public class FrazioneEstesa : Frazione
+    {
+        private double _fractionToDecimal;
+        public FrazioneEstesa() : base()
+        {
+
+        }
+        public double fTD { get { return _fractionToDecimal; } set { _fractionToDecimal = value; } }
+
+        public void FrazioneInDecimale()
+        {
+            fTD = numeratore / denominatore;
+        }
+    }
 }

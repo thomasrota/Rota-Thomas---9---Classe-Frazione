@@ -14,11 +14,13 @@ namespace Rota_Thomas___9___Classe_Frazione
     {
         public Frazione f;
         public Frazione f1;
+        public FrazioneEstesa fe;
         public Form1()
         {
             InitializeComponent();
             f = new Frazione();
             f1 = new Frazione(f);
+            fe = new FrazioneEstesa();
         }
 
         private void buttonSomma_Click(object sender, EventArgs e)
@@ -60,5 +62,13 @@ namespace Rota_Thomas___9___Classe_Frazione
 			f.Semplifica();
 			MessageBox.Show($"{f.numeratore}/{f.denominatore}");
 		}
-	}
+
+        private void buttonFTD_Click(object sender, EventArgs e)
+        {
+            fe.numeratore = int.Parse(textBoxNum.Text);
+            fe.denominatore = int.Parse(textBoxDen.Text);
+            fe.FrazioneInDecimale();
+            MessageBox.Show($"{fe.fTD}");
+        }
+    }
 }
