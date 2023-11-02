@@ -53,7 +53,7 @@ namespace Rota_Thomas___9___Classe_Frazione
             f.denominatore = int.Parse(textBoxDen.Text);
             f.Divisione(int.Parse(textBoxNum2.Text), (int.Parse(textBoxDen2.Text) == 0) ? throw new ArgumentNullException(paramName: nameof(textBoxDen2), message: "Denominator cannot be null") : int.Parse(textBoxDen2.Text));
             MessageBox.Show($"{f.numeratore}/{f.denominatore}");
-        }
+		}
 
 		private void buttonSemplifica_Click(object sender, EventArgs e)
 		{
@@ -70,5 +70,18 @@ namespace Rota_Thomas___9___Classe_Frazione
             fe.FrazioneInDecimale();
             MessageBox.Show($"{fe.fTD}");
         }
-    }
+
+        private void buttonDTF_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+		private void buttonPotenza_Click(object sender, EventArgs e)
+		{
+			fe.numeratore = int.Parse(textBoxNum.Text);
+			fe.denominatore = int.Parse(textBoxDen.Text);
+			fe.ElevaPotenza(int.Parse(textBoxPot.Text));
+            MessageBox.Show($"{fe.numeratore}/{fe.denominatore}");
+		}
+	}
 }

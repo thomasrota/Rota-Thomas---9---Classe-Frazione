@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml.Schema;
 
 namespace Rota_Thomas___9___Classe_Frazione
@@ -92,16 +93,37 @@ namespace Rota_Thomas___9___Classe_Frazione
 	}
     public class FrazioneEstesa : Frazione
     {
-        private double _fractionToDecimal;
-        public FrazioneEstesa() : base()
+		private double numeroDecimale;
+
+        public FrazioneEstesa()	: base()
         {
 
-        }
-        public double fTD { get { return _fractionToDecimal; } set { _fractionToDecimal = value; } }
+		}
+        public double fTD { get { return numeroDecimale; } set { numeroDecimale = value; } }
+		public void FrazioneInDecimale()
+		{
+			numeroDecimale = (double)numeratore / denominatore;
+		}
+        
+		/*public void DecimaleInFrazione()
+		{
+			double numeroDecimale = 0.333333333;
+			int num = (int)numeroDecimale;
+			int den = 1;
+			while (num != numeroDecimale)
+			{
+				numeroDecimale *= 10;
+				num = (int)numeroDecimale;
+				den *= 10;
+			}
+			numeratore = num;
+			denominatore = den;
+		}*/
 
-        public void FrazioneInDecimale()
-        {
-            fTD = numeratore / denominatore;
-        }
-    }
+		public void ElevaPotenza(int potenza)
+		{
+			numeratore = (int)Math.Pow(numeratore, potenza);
+			denominatore = (int)Math.Pow(denominatore, potenza);
+		}
+	}
 }
